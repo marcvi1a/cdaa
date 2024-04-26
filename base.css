@@ -24,7 +24,7 @@ p {
   color: #ccc;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (max-width: 749px) {
   h1 {
     font-size: 1.5rem;
   }
