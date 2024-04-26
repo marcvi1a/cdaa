@@ -3,3 +3,21 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+}
+
+h1 {
+  color: #171A1C;
+  height: 1rem;
+}
+
+p {
+  color: #171A1C;
+}
