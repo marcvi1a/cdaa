@@ -164,6 +164,22 @@
         });
       });
     })();
+
+    // Keep the hovered principle highlighted (others dimmed) even while the
+    // cursor passes over pillar labels and gaps; reset only on leaving the list.
+    (function () {
+      if (!window.matchMedia('(hover: hover)').matches) return;
+      var main = document.querySelector('main');
+      var values = document.querySelectorAll('.value');
+      values.forEach(function (v) {
+        v.addEventListener('mouseenter', function () {
+          values.forEach(function (o) { o.classList.toggle('active', o === v); });
+        });
+      });
+      main.addEventListener('mouseleave', function () {
+        values.forEach(function (o) { o.classList.remove('active'); });
+      });
+    })();
   </script>
 </body>
 </html>

@@ -105,7 +105,7 @@ main { padding-top: 1rem; }
 .value { transition: opacity 0.18s ease; }
 
 @media (hover: hover) {
-  main:has(.value:hover) .value:not(:hover) { opacity: 0.5; }
+  main:has(.value.active) .value:not(.active) { opacity: 0.5; }
 }
 
 .value summary {
