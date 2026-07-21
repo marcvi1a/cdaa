@@ -93,7 +93,8 @@ main { padding-top: 1rem; }
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--accent);
-  margin: 0;
+  line-height: 1;
+  margin: 0 0 1rem;
 }
 
 .value { transition: opacity 0.18s ease; }
