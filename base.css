@@ -78,11 +78,9 @@ main { padding-top: 1rem; }
 
 .pillar {
   padding: 1.75rem 0 0.5rem;
-  border-top: 1px solid var(--rule);
 }
 
 .pillar:first-of-type {
-  border-top: none;
   padding-top: 1.25rem;
 }
 
@@ -137,6 +135,7 @@ main { padding-top: 1rem; }
   font-weight: 600;
   line-height: 1.25;
   margin: 0;
+  color: #171A1C;
   transition: color 0.15s ease;
 }
 
