@@ -98,8 +98,6 @@ main { padding-top: 1rem; }
 
 .value { transition: opacity 0.18s ease; }
 
-.value + .value { border-top: 1px solid var(--rule); }
-
 @media (hover: hover) {
   main:has(.value:hover) .value:not(:hover) { opacity: 0.5; }
 }
