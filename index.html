@@ -115,6 +115,31 @@
     try {
       if (localStorage.getItem('lang') === 'en') setLang('en');
     } catch (e) {}
+
+    (function () {
+      var values = Array.prototype.slice.call(document.querySelectorAll('.value'));
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      values.forEach(function (d, i) {
+        d.addEventListener('toggle', function () {
+          if (!d.open) return;
+          requestAnimationFrame(function () {
+            var next = values[i + 1];
+            var margin = 16;
+            var targetBottom = next
+              ? next.querySelector('summary').getBoundingClientRect().bottom
+              : d.getBoundingClientRect().bottom;
+            var overflow = targetBottom + margin - window.innerHeight;
+            if (overflow <= 0) return;
+            var summaryTop = d.querySelector('summary').getBoundingClientRect().top;
+            var maxDelta = Math.max(0, summaryTop - 8);
+            var delta = Math.min(overflow, maxDelta);
+            if (delta > 0) {
+              window.scrollBy({ top: delta, left: 0, behavior: reduce ? 'auto' : 'smooth' });
+            }
+          });
+        });
+      });
+    })();
   </script>
 </body>
 </html>
