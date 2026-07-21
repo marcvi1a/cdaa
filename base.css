@@ -34,7 +34,7 @@ body[data-lang="en"] [lang="pt-BR"] { display: none; }
 }
 
 .wrap {
-  max-width: 46rem;
+  max-width: 72rem;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -74,14 +74,14 @@ body[data-lang="en"] [lang="pt-BR"] { display: none; }
   display: block;
 }
 
-main { padding-top: 1.5rem; }
-
-.pillar {
-  padding: 2.5rem 0 1.75rem;
-  border-top: 1px solid var(--rule);
+main {
+  padding-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 3rem;
 }
 
-.pillar:first-of-type { border-top: none; }
+.pillar { padding: 0; }
 
 .pillar h2 {
   font-family: 'Poppins', sans-serif;
@@ -94,7 +94,7 @@ main { padding-top: 1.5rem; }
 }
 
 .value {
-  padding: 1.75rem 0 0;
+  padding: 1.5rem 0 0;
   transition: opacity 0.18s ease;
 }
 
@@ -102,7 +102,7 @@ main:has(.value:hover) .value:not(:hover) { opacity: 0.5; }
 
 .value h3 {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.25;
   margin: 0 0 0.6rem;
@@ -118,14 +118,27 @@ main:has(.value:hover) .value:not(:hover) { opacity: 0.5; }
 .value p {
   margin: 0;
   color: var(--body);
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .foot {
   border-top: 1px solid var(--rule);
-  margin-top: 2.5rem;
-  padding: 2.5rem 0 3.5rem;
+  margin-top: 3rem;
+  padding: 2rem 0 3rem;
   color: var(--muted);
   font-size: 0.95rem;
 }
 
 .foot a { color: #F8D5C9; }
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+    padding-top: 0.75rem;
+  }
+
+  .pillar { padding: 1.75rem 0; }
+
+  .pillar + .pillar { border-top: 1px solid var(--rule); }
+}
