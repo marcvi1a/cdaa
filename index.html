@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="preload" href="flag-br.svg" as="image">
-  <link rel="preload" href="flag-us.svg" as="image">
+  <link rel="preload" href="flag-br.png" as="image">
+  <link rel="preload" href="flag-us.png" as="image">
   <link rel="stylesheet" href="base.css">
 </head>
 <body data-lang="pt">
@@ -19,7 +19,7 @@
       <span class="brand">Companhia de Águas Árticas</span>
       <nav class="lang" aria-label="Idioma / Language">
         <button type="button" id="lang-toggle" aria-label="Switch to English" onclick="toggleLang()">
-          <img id="flag" src="flag-br.svg" alt="Português (Brasil)">
+          <img id="flag" src="flag-br.png" alt="Português (Brasil)">
         </button>
       </nav>
     </header>
@@ -87,11 +87,11 @@
       var flag = document.getElementById('flag');
       var btn = document.getElementById('lang-toggle');
       if (l === 'pt') {
-        flag.src = 'flag-br.svg';
+        flag.src = 'flag-br.png';
         flag.alt = 'Português (Brasil)';
         btn.setAttribute('aria-label', 'Switch to English');
       } else {
-        flag.src = 'flag-us.svg';
+        flag.src = 'flag-us.png';
         flag.alt = 'English (US)';
         btn.setAttribute('aria-label', 'Mudar para português');
       }
