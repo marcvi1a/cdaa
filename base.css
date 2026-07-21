@@ -43,6 +43,10 @@ body[data-lang="en"] [lang="pt-BR"] { display: none; }
 }
 
 .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
