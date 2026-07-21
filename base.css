@@ -4,14 +4,19 @@
   --body: #3A3733;
   --muted: #6B675F;
   --accent: #378DE2;
-  --rule: #F6DFD7;
+  --rule: rgba(23, 26, 28, 0.12);
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--ink);
   font-family: 'Montserrat', 'Segoe UI', sans-serif;
   font-size: 1.0625rem;
