@@ -100,7 +100,9 @@ main { padding-top: 1rem; }
 
 .value + .value { border-top: 1px solid var(--rule); }
 
-main:has(.value:hover) .value:not(:hover) { opacity: 0.5; }
+@media (hover: hover) {
+  main:has(.value:hover) .value:not(:hover) { opacity: 0.5; }
+}
 
 .value summary {
   display: flex;
@@ -126,7 +128,9 @@ main:has(.value:hover) .value:not(:hover) { opacity: 0.5; }
 
 .value[open] summary::after { content: '−'; }
 
-.value summary:hover h3 { color: var(--accent); }
+@media (hover: hover) {
+  .value summary:hover h3 { color: var(--accent); }
+}
 
 .value h3 {
   font-family: 'Poppins', sans-serif;
