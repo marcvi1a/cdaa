@@ -7,7 +7,10 @@
   --rule: #F6DFD7;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
 
 body {
   margin: 0;
@@ -109,6 +112,8 @@ main { padding-top: 1rem; }
   padding: 1rem 0;
   cursor: pointer;
   list-style: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .value summary::-webkit-details-marker { display: none; }
