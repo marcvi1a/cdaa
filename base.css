@@ -116,9 +116,8 @@ main:has(.value:hover) .value:not(:hover) { opacity: 0.5; }
 
 .value .num {
   color: var(--accent);
-  font-size: 1rem;
+  font-size: inherit;
   font-weight: 600;
-  letter-spacing: 0.05em;
   margin-right: 0.65rem;
 }
 
