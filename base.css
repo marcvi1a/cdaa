@@ -167,6 +167,10 @@ main { padding-top: 1rem; }
   padding: 2rem 0 3rem;
   color: var(--muted);
   font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
 }
 
-.foot a { color: #F8D5C9; }
+.foot a { color: #F8D5C9; text-decoration: none; }

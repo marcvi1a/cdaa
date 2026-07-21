@@ -53,7 +53,7 @@
           <summary>
             <h3><span class="num">3.</span><span lang="pt-BR">Obsessão pelo Cliente</span><span lang="en">Customer Obsession</span></h3>
           </summary>
-          <p lang="pt-BR">Comece pelo cliente e trabalhe de trás para frente. Observe os concorrentes; seja obcecado pelos clientes. Confiança se conquista em anos e se perde em minutos — conquiste com vigor, proteja com ciúme.</p>
+          <p lang="pt-BR">Comece pelo cliente e trabalhe de trás para frente. Observe os concorrentes; seja obcecado pelos clientes. Confiança se conquista em anos e se perde em minutos — ganhe com vigor, proteja com ciúme.</p>
           <p lang="en">Start with the customer and work backwards. Watch competitors; obsess over customers. Trust is earned over years and lost in minutes — earn it vigorously, keep it jealously.</p>
         </details>
 
@@ -88,7 +88,8 @@
     </main>
 
     <footer class="foot">
-      <p><a href="mailto:sac@cdaa.com.br">sac@cdaa.com.br</a></p>
+      <a href="mailto:sac@cdaa.com.br">sac@cdaa.com.br</a>
+      <a href="https://cdaa.com.br">cdaa.com.br</a>
     </footer>
   </div>
 
@@ -119,24 +120,47 @@
     (function () {
       var values = Array.prototype.slice.call(document.querySelectorAll('.value'));
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var header = document.querySelector('.topbar');
+
+      function scrollForOpen(d, i) {
+        var margin = 16;
+        var headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+        var topLimit = headerBottom + margin;
+
+        // Context above the opened value: the previous principle in the same
+        // pillar, or the pillar label if this is the first principle in it.
+        var prev = d.previousElementSibling;
+        while (prev && !prev.classList.contains('value')) prev = prev.previousElementSibling;
+        var anchor = prev ? prev.querySelector('summary') : d.closest('.pillar').querySelector('h2');
+        var anchorTop = anchor.getBoundingClientRect().top;
+
+        // If that context is hidden under the fixed header, scroll up to show it,
+        // which also brings the opened title fully into view.
+        if (anchorTop < topLimit) {
+          window.scrollBy({ top: anchorTop - topLimit, left: 0, behavior: reduce ? 'auto' : 'smooth' });
+          return;
+        }
+
+        // Otherwise reveal the value's text plus the next title below the fold,
+        // capped so the opened title never slides under the header.
+        var next = values[i + 1];
+        var targetBottom = next
+          ? next.querySelector('summary').getBoundingClientRect().bottom
+          : d.getBoundingClientRect().bottom;
+        var overflow = targetBottom + margin - window.innerHeight;
+        if (overflow <= 0) return;
+        var summaryTop = d.querySelector('summary').getBoundingClientRect().top;
+        var maxDelta = Math.max(0, summaryTop - topLimit);
+        var delta = Math.min(overflow, maxDelta);
+        if (delta > 0) {
+          window.scrollBy({ top: delta, left: 0, behavior: reduce ? 'auto' : 'smooth' });
+        }
+      }
+
       values.forEach(function (d, i) {
         d.addEventListener('toggle', function () {
           if (!d.open) return;
-          requestAnimationFrame(function () {
-            var next = values[i + 1];
-            var margin = 16;
-            var targetBottom = next
-              ? next.querySelector('summary').getBoundingClientRect().bottom
-              : d.getBoundingClientRect().bottom;
-            var overflow = targetBottom + margin - window.innerHeight;
-            if (overflow <= 0) return;
-            var summaryTop = d.querySelector('summary').getBoundingClientRect().top;
-            var maxDelta = Math.max(0, summaryTop - 8);
-            var delta = Math.min(overflow, maxDelta);
-            if (delta > 0) {
-              window.scrollBy({ top: delta, left: 0, behavior: reduce ? 'auto' : 'smooth' });
-            }
-          });
+          requestAnimationFrame(function () { scrollForOpen(d, i); });
         });
       });
     })();
