@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="flag-br.svg" as="image">
+  <link rel="preload" href="flag-us.svg" as="image">
   <link rel="stylesheet" href="base.css">
 </head>
 <body data-lang="pt">
@@ -16,8 +18,9 @@
     <header class="topbar">
       <span class="brand">Companhia de Águas Árticas</span>
       <nav class="lang" aria-label="Idioma / Language">
-        <button type="button" id="btn-pt" aria-pressed="true" onclick="setLang('pt')">PT</button>
-        <button type="button" id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+        <button type="button" id="lang-toggle" aria-label="Mudar para inglês" onclick="toggleLang()">
+          <img id="flag" src="flag-br.svg" alt="Português (Brasil)">
+        </button>
       </nav>
     </header>
 
@@ -81,9 +84,21 @@
     function setLang(l) {
       document.body.dataset.lang = l;
       document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
-      document.getElementById('btn-pt').setAttribute('aria-pressed', String(l === 'pt'));
-      document.getElementById('btn-en').setAttribute('aria-pressed', String(l === 'en'));
+      var flag = document.getElementById('flag');
+      var btn = document.getElementById('lang-toggle');
+      if (l === 'pt') {
+        flag.src = 'flag-br.svg';
+        flag.alt = 'Português (Brasil)';
+        btn.setAttribute('aria-label', 'Mudar para inglês');
+      } else {
+        flag.src = 'flag-us.svg';
+        flag.alt = 'English (US)';
+        btn.setAttribute('aria-label', 'Switch to Portuguese');
+      }
       try { localStorage.setItem('lang', l); } catch (e) {}
+    }
+    function toggleLang() {
+      setLang(document.body.dataset.lang === 'pt' ? 'en' : 'pt');
     }
     try {
       if (localStorage.getItem('lang') === 'en') setLang('en');
