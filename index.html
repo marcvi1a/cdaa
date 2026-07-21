@@ -18,7 +18,7 @@
     <header class="topbar">
       <span class="brand">Companhia de Águas Árticas</span>
       <nav class="lang" aria-label="Idioma / Language">
-        <button type="button" id="lang-toggle" aria-label="Mudar para inglês" onclick="toggleLang()">
+        <button type="button" id="lang-toggle" aria-label="Switch to English" onclick="toggleLang()">
           <img id="flag" src="flag-br.svg" alt="Português (Brasil)">
         </button>
       </nav>
@@ -89,11 +89,11 @@
       if (l === 'pt') {
         flag.src = 'flag-br.svg';
         flag.alt = 'Português (Brasil)';
-        btn.setAttribute('aria-label', 'Mudar para inglês');
+        btn.setAttribute('aria-label', 'Switch to English');
       } else {
         flag.src = 'flag-us.svg';
         flag.alt = 'English (US)';
-        btn.setAttribute('aria-label', 'Switch to Portuguese');
+        btn.setAttribute('aria-label', 'Mudar para português');
       }
       try { localStorage.setItem('lang', l); } catch (e) {}
     }
