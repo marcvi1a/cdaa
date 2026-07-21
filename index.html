@@ -165,20 +165,21 @@
       });
     })();
 
-    // Keep the hovered principle highlighted (others dimmed) even while the
-    // cursor passes over pillar labels and gaps; reset only on leaving the list.
+    // Highlight the principle under the cursor (dim the rest). Over a pillar
+    // label or gap the cursor has no principle ancestor, so the highlight
+    // releases; between principles their boxes are adjacent (no empty space
+    // to cross), so the highlight hands over without flicker.
     (function () {
       if (!window.matchMedia('(hover: hover)').matches) return;
       var main = document.querySelector('main');
       var values = document.querySelectorAll('.value');
-      values.forEach(function (v) {
-        v.addEventListener('mouseenter', function () {
-          values.forEach(function (o) { o.classList.toggle('active', o === v); });
-        });
+      function setActive(v) {
+        values.forEach(function (o) { o.classList.toggle('active', o === v); });
+      }
+      main.addEventListener('mouseover', function (e) {
+        setActive(e.target.closest('.value'));
       });
-      main.addEventListener('mouseleave', function () {
-        values.forEach(function (o) { o.classList.remove('active'); });
-      });
+      main.addEventListener('mouseleave', function () { setActive(null); });
     })();
   </script>
 </body>
