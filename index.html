@@ -1,15 +1,100 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Companhia de Águas Árticas</title>
-    <link rel="stylesheet" href="base.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Companhia de Águas Árticas</title>
+  <meta name="description" content="Ousadia. Humildade. Talento. Como trabalhamos na Companhia de Águas Árticas.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❄️</text></svg>">
+  <link rel="stylesheet" href="base.css">
 </head>
-<body>
-  <div class="text">
-    <h1>Companhia de Águas Árticas</h1>
-    <p>sac@cdaa.com.br</p>
+<body data-lang="pt">
+  <div class="wrap">
+    <header class="topbar">
+      <span class="brand">Companhia de Águas Árticas</span>
+      <nav class="lang" aria-label="Idioma / Language">
+        <button type="button" id="btn-pt" aria-pressed="true" onclick="setLang('pt')">PT</button>
+        <button type="button" id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>
+        <span lang="pt-BR">Ousadia.<br>Humildade.<br>Talento.</span>
+        <span lang="en">Bold.<br>Humble.<br>Talented.</span>
+      </h1>
+      <p class="sub" lang="pt-BR">Como trabalhamos.</p>
+      <p class="sub" lang="en">How we work.</p>
+    </section>
+
+    <main>
+      <section class="pillar">
+        <h2><span lang="pt-BR">Ousadia</span><span lang="en">Bold</span></h2>
+
+        <article class="value">
+          <h3><span class="num">01</span><span lang="pt-BR">Velocidade</span><span lang="en">Speed</span></h3>
+          <p lang="pt-BR">Velocidade importa nos negócios. A maioria das decisões é uma porta que abre para os dois lados: atravesse, aprenda, ajuste. Guarde o estudo profundo para as poucas que são irreversíveis. Preferimos um risco calculado hoje a um plano perfeito no mês que vem.</p>
+          <p lang="en">Speed matters in business. Most decisions are doors that open both ways: walk through, learn, adjust. Save the deep study for the few that are irreversible. We prefer a calculated risk today over a perfect plan next month.</p>
+        </article>
+
+        <article class="value">
+          <h3><span class="num">02</span><span lang="pt-BR">Dono</span><span lang="en">Ownership</span></h3>
+          <p lang="pt-BR">Pense como dono porque aqui você é: uma parte das vendas é dividida com o time. Pense no longo prazo; nunca troque valor duradouro por holofote de curto prazo. Aja pela empresa inteira, não só pela sua área. “Isso não é meu trabalho” não existe aqui.</p>
+          <p lang="en">Think like an owner because here, you are: a share of sales is split with the team. Think long term; never trade lasting value for short-term clout. Act for the whole company, not just your area. “That’s not my job” doesn’t exist here.</p>
+        </article>
+      </section>
+
+      <section class="pillar">
+        <h2><span lang="pt-BR">Humildade</span><span lang="en">Humble</span></h2>
+
+        <article class="value">
+          <h3><span class="num">03</span><span lang="pt-BR">Comunicação Clara</span><span lang="en">Clear Communication</span></h3>
+          <p lang="pt-BR">Empresas não têm problemas de comunicação; têm problemas de má comunicação. Se uma mensagem pode ser entendida de mais de um jeito, será entendida do jeito que causa mais dano, então escreva e fale de forma que não deixe dúvida. Assuma a melhor intenção, sempre.</p>
+          <p lang="en">Companies don’t have communication problems; they have miscommunication problems. If a message can be read in more than one way, it will be read in the way that does the most harm, so write and speak so it can’t. Assume best intentions, always.</p>
+        </article>
+
+        <article class="value">
+          <h3><span class="num">04</span><span lang="pt-BR">Sempre Aprendendo</span><span lang="en">Always Learning</span></h3>
+          <p lang="pt-BR">Ninguém aqui terminou de aprender. Tenha curiosidade sobre novas possibilidades e aja para explorá-las. Tenha humildade com o trabalho dos outros: “fácil” é a palavra que as pessoas usam para descrever o trabalho alheio. Seria justo chamar o seu de fácil?</p>
+          <p lang="en">Nobody here is done learning. Stay curious about new possibilities and act to explore them. Stay humble about others’ work: “easy” is a word people use to describe other people’s jobs. Would it be fair to call what you do easy?</p>
+        </article>
+      </section>
+
+      <section class="pillar">
+        <h2><span lang="pt-BR">Talento</span><span lang="en">Talented</span></h2>
+
+        <article class="value">
+          <h3><span class="num">05</span><span lang="pt-BR">Excelência</span><span lang="en">Excellence</span></h3>
+          <p lang="pt-BR">Vendemos premium, então o padrão é premium: no produto, na entrega, na planilha, no chão de fábrica. Subir a régua é trabalho de todos, e começa pelo seu próprio.</p>
+          <p lang="en">We sell premium, so the standard is premium: in the product, the delivery, the spreadsheet, the factory floor. Raising the bar is everyone’s job, and it starts with your own work.</p>
+        </article>
+
+        <article class="value">
+          <h3><span class="num">06</span><span lang="pt-BR">Obsessão pelo Cliente</span><span lang="en">Customer Obsession</span></h3>
+          <p lang="pt-BR">Comece pelo cliente e trabalhe de trás para frente. Observe os concorrentes; seja obcecado pelos clientes. Confiança se conquista em anos e se perde em minutos: conquiste com vigor, proteja com ciúme.</p>
+          <p lang="en">Start with the customer and work backwards. Watch competitors; obsess over customers. Trust is earned over years and lost in minutes: earn it vigorously, keep it jealously.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p><a href="mailto:sac@cdaa.com.br">sac@cdaa.com.br</a></p>
+      <p class="credit" lang="pt-BR">Inspirado na 37signals e nos Leadership Principles da Amazon.</p>
+      <p class="credit" lang="en">Inspired by 37signals and Amazon’s Leadership Principles.</p>
+    </footer>
   </div>
+
+  <script>
+    function setLang(l) {
+      document.body.dataset.lang = l;
+      document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+      document.getElementById('btn-pt').setAttribute('aria-pressed', String(l === 'pt'));
+      document.getElementById('btn-en').setAttribute('aria-pressed', String(l === 'en'));
+      try { localStorage.setItem('lang', l); } catch (e) {}
+    }
+    try {
+      if (localStorage.getItem('lang') === 'en') setLang('en');
+    } catch (e) {}
+  </script>
 </body>
 </html>

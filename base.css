@@ -1,40 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+  --bg: #FBF7F0;
+  --ink: #171A1C;
+  --body: #3A3733;
+  --muted: #6B675F;
+  --accent: #1C6EA4;
+  --rule: #E4DDD0;
+}
+
+* { box-sizing: border-box; }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden;
-}
-
-.text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
-  flex-direction: column;
-  text-align: center;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
 }
 
-h1 {
-  color: #171A1C;
-  height: 1rem;
+body[data-lang="pt"] [lang="en"] { display: none; }
+body[data-lang="en"] [lang="pt-BR"] { display: none; }
+
+.wrap {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-p {
-  color: #ccc;
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
 }
 
-@media screen and (max-width: 749px) {
-  .text {
-    height: 90vh;
-  }
+.brand {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 
-  h1 {
-    font-size: 1.5rem;
-    height: 0.9rem;
-  }
+.lang button {
+  font: inherit;
+  font-size: 0.9rem;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  color: var(--muted);
+}
 
-  p {
-    font-size: 0.9rem;
-  }
+.lang button:hover { color: var(--ink); }
+
+.lang button[aria-pressed="true"] {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.hero { padding: 5rem 0 3.5rem; }
+
+.hero h1 {
+  font-size: clamp(2.6rem, 7vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+}
+
+.hero .sub {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--muted);
+  margin: 0;
+}
+
+.pillar {
+  padding: 2.5rem 0 0.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+.pillar h2 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.value { padding: 1.75rem 0; }
+
+.value h3 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+}
+
+.value .num {
+  color: var(--accent);
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  margin-right: 0.65rem;
+}
+
+.value p {
+  margin: 0;
+  color: var(--body);
+}
+
+.foot {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.5rem;
+  padding: 2.5rem 0 3.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.foot a { color: inherit; }
+
+.foot .credit {
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 3.25rem 0 2.5rem; }
 }
