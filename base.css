@@ -164,7 +164,7 @@ main { padding-top: 1rem; }
 .foot {
   border-top: 1px solid var(--rule);
   margin-top: 2rem;
-  padding: 2rem 0 3rem;
+  padding: 3.5rem 0 3rem;
   color: var(--muted);
   font-size: 0.95rem;
   display: flex;
