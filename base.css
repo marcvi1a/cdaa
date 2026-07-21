@@ -88,7 +88,7 @@ body[data-lang="en"] [lang="pt-BR"] { display: none; }
 main { padding-top: 1.5rem; }
 
 .pillar {
-  padding: 2.5rem 0 0.75rem;
+  padding: 2.5rem 0 1.75rem;
   border-top: 1px solid var(--rule);
 }
 
@@ -105,7 +105,7 @@ main { padding-top: 1.5rem; }
 }
 
 .value {
-  padding: 1.75rem 0;
+  padding: 1.75rem 0 0;
   transition: opacity 0.18s ease;
 }
 
