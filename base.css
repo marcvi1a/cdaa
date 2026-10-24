@@ -92,7 +92,7 @@ main { padding-top: 1rem; }
 }
 
 .pillar h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -124,7 +124,7 @@ main { padding-top: 1rem; }
 
 .value summary::after {
   content: '+';
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 1.35rem;
   font-weight: 600;
   line-height: 1;
@@ -139,7 +139,7 @@ main { padding-top: 1rem; }
 }
 
 .value h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 1.35rem;
   font-weight: 600;
   line-height: 1.25;
